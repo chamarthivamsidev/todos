@@ -16,9 +16,14 @@ code {
   width: 90px;
   height: 39px;
   padding: 5px;
-  background-color: black;
+  background-color: teal;
   border-radius: 5px;
   margin-left: 10px;
+  cursor: pointer;
+}
+.addBtn:hover {
+  background-color: black;
+  color: white;
 }
 .outterScreen {
   width: 30%;

@@ -1,6 +1,5 @@
 {
   "name": "todo-app-with-priority",
-  "homepage": "https://AleemAlam.github.io/my-todo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,5 +44,6 @@
   },
   "devDependencies": {
     "cypress": "^9.4.1"
-  }
+  },
+  "homepage": "."
 }

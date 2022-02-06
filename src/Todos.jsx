@@ -6,6 +6,10 @@ export const Todos = () => {
   const [todo, setTodo] = useState([]);
   const [page, setPage] = useState(1);
 
+  useEffect(() => {
+    getData();
+  }, [page]);
+
   const getData = () => {
     axios
       .get(
@@ -16,10 +20,6 @@ export const Todos = () => {
         setTodo(data);
       });
   };
-
-  useEffect(() => {
-    getData();
-  }, [page]);
 
   return (
     <div>
@@ -38,12 +38,11 @@ export const Todos = () => {
         className="addBtn"
         onClick={() => {
           const list = { status: false, title: text };
-          axios({
-            method: "post",
-            url: "https://json-mock-server-47.herokuapp.com/todos",
-            data: list,
-          });
-          getData();
+          axios
+            .post("https://json-mock-server-47.herokuapp.com/todos", list)
+            .then(() => {
+              getData();
+            });
         }}
       >
         Add
