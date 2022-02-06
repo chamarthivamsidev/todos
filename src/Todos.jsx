@@ -6,10 +6,6 @@ export const Todos = () => {
   const [todo, setTodo] = useState([]);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    getData();
-  }, [page]);
-
   const getData = () => {
     axios
       .get(`http://localhost:3002/todos?_page=${page}&_limit=4`)
@@ -18,6 +14,10 @@ export const Todos = () => {
         setTodo(data);
       });
   };
+
+  useEffect(() => {
+    getData();
+  }, [page]);
 
   return (
     <div>
