@@ -8,7 +8,9 @@ export const Todos = () => {
 
   const getData = () => {
     axios
-      .get(`http://localhost:3002/todos?_page=${page}&_limit=4`)
+      .get(
+        `https://fake-api-project-for-masai.herokuapp.com/tasks?_page=${page}&_limit=4`
+      )
       .then((res) => {
         let data = res.data;
         setTodo(data);
