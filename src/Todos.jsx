@@ -9,7 +9,7 @@ export const Todos = () => {
   const getData = () => {
     axios
       .get(
-        `https://fake-api-project-for-masai.herokuapp.com/tasks?_page=${page}&_limit=4`
+        `https://json-mock-server-47.herokuapp.com/todos?_page=${page}&_limit=4`
       )
       .then((res) => {
         let data = res.data;
@@ -40,7 +40,7 @@ export const Todos = () => {
           const list = { status: false, title: text };
           axios({
             method: "post",
-            url: "http://localhost:3002/todos",
+            url: "https://json-mock-server-47.herokuapp.com/todos",
             data: list,
           });
           getData();
